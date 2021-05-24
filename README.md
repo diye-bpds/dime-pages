@@ -1,1 +1,1 @@
-# dimi website
+# DIME website
