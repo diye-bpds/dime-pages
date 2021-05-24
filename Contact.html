@@ -1,0 +1,503 @@
+<!DOCTYPE html> 
+<html> 
+ 
+<head> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <title> Contact </title>
+    <style type="text/css">
+     
+     
+     
+     header,heading,section,footer {
+     font-family: arial;
+     }
+     
+     a {
+     }
+     a:link {
+     color: white;
+     }
+     a:visited {
+     color:white;
+     border: 1px solid white;
+     }
+     a:focus {
+     border: 1px solid white;
+     }
+     a:hover {
+     border: 1px solid white;
+     color: white;
+     }
+     a:active {
+     text-decoration: underline;
+     border: 1px solid white;
+     color: white;
+     }
+     
+     header {
+     height: 40px;
+     width: 100%;
+     background: dimgrey;
+     color: white;
+     text-align: ;
+     }
+     
+     body {
+     margin: 1;
+     }
+     
+     .overlay {
+     height: 100%;
+     width: 0;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: dimgrey;
+     background-color: dimgrey;
+     overflow-x: hidden;
+     transition: 0.5s;
+     }
+     
+     .overlay-content {
+     position: relative;
+     top: 25%;
+     width: 100%;
+     text-align: center;
+     margin-top: 30px;
+     }
+     
+     .overlay a {
+     padding: 8px;
+     text-decoration: none;
+     font-size: 36px;
+     color: white;
+     display: block;
+     transition: 0.3s;
+     }
+     
+     .overlay a:hover, .overlay a:focus {
+     color: white;
+     border: 1px solid white;
+     }
+     
+     .overlay .closebtn {
+     position: absolute;
+     top: 20px;
+     right: 45px;
+     font-size: 60px;
+     }
+     
+     /* When the height of the screen is less than
+     450 pixels, this will change the font-size of
+     the links and position the close button again,
+     so they don't overlap */ 
+     
+     @media screen and (max-height:450px){
+     .overlay a {font-size: 20px}
+     .overlay .closebtn {
+     font-size: 40px;
+     top: 15px;
+     right: 35px;
+     }
+     }
+     
+     
+     heading {
+     height: 130px;
+     width: 100%;
+     background: white;
+     color: white;
+     text-align: center;
+     }
+     
+     * {
+     box-sizing:border-box;
+     }
+     
+     .input-cnt {
+     display:flex;
+     }
+     
+     .input-cnt > i {
+     min-width:20%;
+     padding:10px;
+     color: white;
+     text-align:center;
+     background: dimgrey;
+     border-top-left-radius:20px;
+     border-bottom-left-radius:20px;
+     }
+     .input-cnt > input {
+     
+     outline:none;
+     border:none;
+     padding:10px;
+     border:1px solid grey;
+     border-top-right-radius:10px;
+     border-bottom-right-radius:10px;
+     width:100%;
+     transition:width.5s;
+     }
+     
+     .input-cnt:hover > input {
+     border:2px solid dimgrey;
+     width:100%;
+     }
+     
+     .input-cnt:hover > i {
+     background: grey;
+     color: white;
+     }
+     
+     section {
+     height: 1200px;
+     width: 100%;
+     background: white;
+     color: dimgrey;
+     font-size: 12pt;
+     }
+     
+     img {
+        border-radius: 50%;
+     }
+     
+     
+     .form-container {
+     margin: 10px;
+     padding: 10px;
+     background: white;
+     color: dimgrey;
+     width: 100%;
+     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+     }
+     .input-cnt {
+     display: flex; /* display the icon and the input in a line */
+     margin-bottom: 15px;
+     }
+     .input-cnt:last-child {
+     margin-bottom: 0px;
+     }
+     .input-cnt > i {
+     min-width: 30px; /* set a minimum width for the icon */
+     padding: 10px; /* make sure the icon is centered vertically */
+     text-align: left; /* horizontally center the icon */
+     background: dimgrey;
+     border-top-left-radius: 20px;
+     border-bottom-left-radius: 20px;
+     color: white;
+     }
+     /* change styles when focused */
+     .input-cnt:hover > i {
+     background: dimgrey;
+     color: white;
+     }
+     /* style the input and textarea */
+     .input-cnt > input[type="text"], .input-cnt > textarea {
+     outline: none;
+     border: none;
+     padding: 10px;
+     border: 1px solid dimgrey;
+     border-top-right-radius: 10px;
+     border-bottom-right-radius: 10px;
+     width: 100%;
+     }
+     /* center textarea icon and increase size */
+     .textarea-icon {
+     padding: 60px 10px !important; /* top and bottom paddings are set to 60px */
+     }
+     /* style the submit button */
+     .input-cnt > input[type="submit"] {
+     border: none;
+     border-radius: 20px;
+     outline: none;
+     width: 100%;
+     margin: 0 auto;
+     font-size: 12pt;
+     padding: 8px;
+     color: white;
+     background: dimgrey;
+     transition-duration: .5s;
+     }
+     /* add a hover effect for the submit button */
+     .input-cnt > input[type="submit"]:hover {
+     color: white;
+     background: dimgrey;
+     }
+     
+     button {  
+     background-color: dimgrey;
+     color: white;
+     border: 2px solid dimgrey;
+     outline: none;
+     padding: 15px 30px;
+     border-radius: 5px;
+     }  
+     
+     * {
+     box-sizing: border-box;
+     }
+     html, body {
+     margin: 0;
+     padding: 0;
+     }
+     body {
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+     }
+     main {
+     flex: 1 0 auto;
+     }
+     
+     footer {
+     color: black;
+     background: gray;
+     position: relative; /* required to position the copyright at the bottom */
+     font-size: 80%;
+     }
+     
+     .footer-copyright {
+     width: 100%;
+     height: 40px;
+     text-align: center;
+     background: white;
+     color: grey;
+     /* positions the copyright at the bottom of the footer */
+     padding: 10px;
+     position: absolute;
+     bottom: 0px;
+     left: 0px;
+     }
+     
+     .footer-body {
+     margin-bottom: 40px;
+     padding: 30px;
+     }
+     
+     .footer-body > div:first-child {
+     font-size: 150%;
+     }
+     
+     .footer-body ul {
+     list-style-type: none;
+     margin: 0px;
+     padding: 0px;
+     text-align: center;
+     }
+     
+     .footer-body li > a {
+     background: deepskyblue;
+     color: black;
+     text-decoration: none;
+     margin-bottom: 7px;
+     }
+     
+     </style>
+      </head> 
+       <body>
+       
+       <header>
+       
+      <div id="myNav" class="overlay"><a href="javascript:void(0)" class="closebtn"onclick="closeNav()">&times;</a><div class="overlay-content">
+       
+       
+       <dl>
+       
+       <dl> <a href="Home.html"> Home </a> </dl>
+       <dl> <a href="About.html"> About </a> </dl>
+       <dl> <a href="Intro to business planning.html"> Intro to business planning </a> </dl>
+       <dl> <a href="The DIYE Business Plan Development System.html">  The DIYE Business Plan Development System </a> </dl>
+       <dl> <a href="Terms of use.html"> Terms of use </a> </dl>
+       <dl> <a href="Compile a business plan.html"> Compile a business plan </a> </dl>
+       <dl> <a href="Contact.html"> Contact </a> </dl>
+       
+       </dl>
+       
+       </div></div><span style="font-size:30px;cursor:pointer"onclick="openNav()">&#9776;</span>
+       
+       <script>
+       function openNav() {
+       document.getElementById("myNav")
+       .style.width = "100%";
+       }
+       
+       function closeNav() {
+       document.getElementById("myNav")
+       .style.width = "0%";
+       }
+       
+       </script>
+       
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       
+       </header>
+       
+       <heading>
+       
+       <br>
+       
+       <center><img src="/storage/emulated/0/DCIM/Logo Maker/Photo_1621536180488.png" width="180" height="180" controls></img> </center>
+       
+       </heading>
+       
+       <section>
+       
+       <br>
+       <br>
+       
+       <div id="section">
+       <div class="input-cnt">
+       <i class="searchbox">Search</i>
+       <input type="text" placeholder="Search" />
+       </div>
+       </div>
+       
+       <br>
+       
+  <center> <h3> <u> Contact </u> </h3> </center>
+  
+  <br>
+  <br>
+  
+  <div class="form-container">
+  
+  <form action="#">
+  
+  
+  <div class="input-cnt">
+  <i class="material-icons">Person</i>
+  <input type="text" placeholder="Name" name="name" />
+  </div>
+  
+  <br>
+  <br>
+  
+  <div class="input-cnt">
+  <i class="material-icons">Email</i>
+  <input type="text" placeholder="Email" name="email" />
+  </div>
+  
+  <br>
+  <br>
+  
+  <div class="input-cnt">
+  <i class="material-icons textarea-icon">Message</i>
+  <textarea placeholder="Your message here..." name="message"></textarea>
+  </div>
+  
+  <br>
+  <br>
+  
+  <div class="input-cnt">
+  <input type="submit" />
+  </div>
+  
+  </form>
+  </div>
+  
+  <br>
+  
+<p> <u> <b> Address: </b> </p> </u>
+
+<p>T375 Honono street<br>
+Site B<br>
+Khayelitsha<br>
+7784</p>
+  
+<p> <u> <b> Country: </b> </u> </p>
+
+<p>South Africa</p>
+  
+<p> <u> <b> City: </b> </u> </p>
+
+<p>Cape Town</p>
+  
+<p> <u> <b> Email: </b> </u> </p>
+  
+<p>diyebpds@outlook.com</p>
+  
+</div>
+  
+  <br>
+  <br>
+  
+  <center> <button onclick="sharedata()" type="button"> share </button> </center>
+  
+  
+  <script>
+  
+  const shareData = {
+  title: 'Do it more efficiently',
+  text: 'Business planning made easier for South Africans!',
+  url: 'https://developer.mozilla.org',
+  }
+  
+  const btn = document.querySelector('button');
+  const resultPara = document.querySelector('.result');
+  
+  // Must be triggered some kind of "user activation"
+  btn.addEventListener('click', async () => {
+  try {
+  await navigator.share(shareData)
+  resultPara.textContent = 'MDN shared successfully'
+  } catch(err) {
+  resultPara.textContent = 'Error: ' + err
+  }
+  });
+  
+  if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+  navigator.share({
+  files: filesArray,
+  title: 'Pictures',
+  text: 'Our Pictures.',
+  })
+  .then(() => console.log('Share was successful.'))
+  .catch((error) => console.log('Sharing failed', error));
+  } else {
+  console.log(`Your system doesn't support sharing files.`);
+  }
+  
+  </script>
+       
+       </section>
+       
+       <footer>
+       <div class="footer-body">
+       <div>
+       <p> </p>
+       </div>
+ 
+       
+      <center> 
+       
+       
+       <dl>
+       
+       <dl> <a href="Home.html"> Home </a> </dl>
+       <dl> <a href="About.html"> About </a> </dl>
+       <dl> <a href="Intro to business planning.html"> Intro to business planning </a> </dl>
+       <dl> <a href="The DIYE Business Plan Development System.html">  The DIYE Business Plan Development System </a> </dl>
+       <dl> <a href="Terms of use.html"> Terms of use </a> </dl>
+       <dl> <a href="Compile a business plan.html"> Compile a business plan </a> </dl>
+       <dl> <a href="Contact.html"> Contact </a> </dl>
+       
+       </dl>
+      
+      </center>
+       
+       </div>
+       </div>
+       <div class="footer-copyright">
+       Copyright &#169; 2021 | DIYE
+       </div>
+       </footer>
+ 
+</body> 
+ </html>
